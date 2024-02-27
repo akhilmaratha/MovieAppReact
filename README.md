@@ -39,7 +39,7 @@ npm start
 
 ## Deployment
 
-The Movie Search App is deployed and hosted on Vercel. You can access the live version of the app [https://movie-app-react-one-lilac.vercel.app/].
+The Movie Search App is deployed and hosted on Vercel. You can access the live version of the app [here](https://movie-app-react-one-lilac.vercel.app/).
 
 ## Usage
 
@@ -51,3 +51,13 @@ The Movie Search App is deployed and hosted on Vercel. You can access the live v
 
 Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request with your changes.
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+If you have any questions or suggestions about this project, feel free to contact the project maintainer:
+
+[Your Name]
+[Your Email Address]
