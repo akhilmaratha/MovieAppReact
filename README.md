@@ -14,7 +14,7 @@ This Movie Search App is a web application created using React, Axios, and Redux
 - **React**: A JavaScript library for building user interfaces.
 - **Axios**: A promise-based HTTP client for making requests to external APIs.
 - **Redux**: A predictable state container for JavaScript apps.
-- **Bootstrap**: A front-end framework for developing responsive and mobile-first websites.
+- **Tailwind CSS**: A utility-first CSS framework for creating custom designs quickly.
 - **Vercel**: A cloud platform for static sites and Serverless Functions, used for hosting the application.
 
 ## Installation
@@ -51,13 +51,3 @@ The Movie Search App is deployed and hosted on Vercel. You can access the live v
 
 Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request with your changes.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-If you have any questions or suggestions about this project, feel free to contact the project maintainer:
-
-[Your Name]
-[Your Email Address]
