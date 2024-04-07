@@ -3,10 +3,8 @@ import { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useNavigate } from "react-router-dom";
 import Loading from "./Loading";
-import Topnav from "./partials/Topnav";
-import Dropdown from "./partials/Dropdown";
 import Cards from "./partials/Cards";
-
+import Bottombar from "./partials/Bottombar";
 const People = () => {
     document.title = "SCSDB | person Shows";
 
@@ -48,19 +46,15 @@ const People = () => {
 
     return person.length > 0 ? (
         <div className="w-screen h-screen ">
-            <div className=" px-[5%] w-full flex items-center justify-between ">
-                <h1 className=" text-2xl font-semibold text-zinc-400">
+            <div className=" p-[5%]  w-full flex items-center justify-between ">
+                <h1 className=" text-3xl font-semibold text-zinc-400">
                     <i
                         onClick={() => navigate(-1)}
                         className="hover:text-[#6556CD] ri-arrow-left-line"
                     ></i>{" "}
                     People
                 </h1>
-                <div className="flex items-center w-[80%]">
-                    <Topnav />
-
-                    <div className="w-[2%]"></div>
-                </div>
+              
             </div>
 
             <InfiniteScroll
@@ -71,6 +65,9 @@ const People = () => {
             >
                 <Cards data={person} title="person" />
             </InfiniteScroll>
+            <div className="sm:hidden fixed bottom-5 left-0 w-full bg-[#1F1E24] z-50">
+        <Bottombar />
+      </div>
         </div>
     ) : (
         <Loading />

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useState ,useEffect} from "react";
 import Sidenav from "./partials/Sidenav";
 import Topnav from "./partials/Topnav";
 import axios from "../utils/axios";
@@ -6,7 +6,7 @@ import Header from "./partials/Header";
 import HorizontalCards from "./partials/HorizontalCards";
 import Dropdown from "./partials/Dropdown";
 import Loading from "./Loading";
-
+import Bottombar from "./partials/Bottombar"
 const Home = () => {
     document.title = "SCSDB | Homepage";
     const [wallpaper, setwallpaper] = useState(null);
@@ -40,22 +40,28 @@ const Home = () => {
 
     return wallpaper && trending ? (
         <>
-            <Sidenav />
-            <div className="w-[80%] h-full overflow-auto overflow-x-hidden">
+             <Sidenav  />
+             <div className="sm:w-[100%] w-full h-full overflow-x-hidden overflow-auto ">
                 <Topnav />
                 <Header data={wallpaper} />
-                <div className="flex justify-between p-5">
-                    <h1 className="text-3xl font-semibold text-zinc-400">
+                <div className="flex items-center  justify-between p-5">
+                    <h1 className="sm:text-4xl text-2xl font-semibold text-zinc-400 pr-10">
                         Trending
                     </h1>
-
                     <Dropdown
                         title="Filter"
                         options={["tv", "movie", "all"]}
                         func={(e) => setcategory(e.target.value)}
                     />
                 </div>
-                <HorizontalCards data={trending} />
+                <div className="mb-[20%] sm:mb-0">
+                   <HorizontalCards data={trending} />   
+                </div>
+              
+                <div className="sm:hidden z-[9] fixed bottom-5 left-0 bg-[#1F1E24]">
+                   <Bottombar/> 
+                </div>
+                
             </div>
         </>
     ) : (

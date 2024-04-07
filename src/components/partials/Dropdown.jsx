@@ -2,7 +2,7 @@ import React from "react";
 
 const Dropdown = ({ title, options, func }) => {
     return (
-        <div className="select">
+        <div className="select block bg-gray-200 border border-gray-200 text-gray-700 rounded-full px-2  ">
             <select defaultValue="0" onChange={func} name="format" id="format">
                 <option value="0" disabled>
                     {title}

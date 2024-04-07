@@ -13,15 +13,15 @@ const Header = ({ data }) => {
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
             }}
-            className="w-full h-[50vh] flex flex-col justify-end items-start p-[5%]"
+            className="sm:w-full sm:h-[70vh]  h-[65vh] flex flex-col justify-end items-start p-[5%]"
         >
-            <h1 className="w-[70%] text-5xl font-black text-white">
+            <h1 className="w-[70%] text-5xl font-black text-white mb-10">
                 {data.name ||
                     data.title ||
                     data.original_name ||
                     data.original_title}
             </h1>
-            <p className="w-[70%] mt-3 mb-3 text-white">
+            <p className="w-[70%]  mb-5 text-white">
                 {data.overview.slice(0, 200)}...
                 <Link
                     to={`/${data.media_type}/details/${data.id}`}
@@ -30,10 +30,10 @@ const Header = ({ data }) => {
                     more
                 </Link>
             </p>
-            <p className="text-white  ">
-                <i className="text-yellow-500 ri-megaphone-fill"></i>{" "}
+            <p className="text-white">
+                <i className="text-yellow-500 ri-megaphone-fill"></i>
                 {data.release_date || "No Information"}
-                <i className="ml-5 text-yellow-500 ri-album-fill"></i>{" "}
+                <i className="ml-5 text-yellow-500 ri-album-fill"></i>
                 {data.media_type.toUpperCase()}
             </p>
             <Link
