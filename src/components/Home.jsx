@@ -7,6 +7,7 @@ import HorizontalCards from "./partials/HorizontalCards";
 import Dropdown from "./partials/Dropdown";
 import Loading from "./Loading";
 import Bottombar from "./partials/Bottombar"
+
 const Home = () => {
     document.title = "SCSDB | Homepage";
     const [wallpaper, setwallpaper] = useState(null);

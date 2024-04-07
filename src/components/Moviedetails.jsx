@@ -64,61 +64,77 @@ const Moviedetails = () => {
       </nav>
 
       {/* Part 2 Poster and details */}
-       <div className="w-full  flex flex-col lg:flex-row  select-none">
+      <div className="w-full  flex flex-col lg:flex-row  select-none items-center gap-5 px-[6%] py-5">
         <img
-          className="shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] h-[50vh] object-cover"
+          className="shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] h-[50vh]  sm:h-[80vh] object-cover"
           src={`https://image.tmdb.org/t/p/original/${
             info.detail.poster_path || info.detail.backdrop_path
           }`}
           alt=""
         />
 
-        <div className="content ml-[2%]  text-white sm:flex-row items-center justify-center">
-        <Link
-            className="px-5 bg-[#6556CD] rounded-lg "
-            to={`${pathname}/trailer`}
-          >
-            <i className="text-xl ri-play-fill mr-3"></i>
-            Play Trailer
-          </Link>
-          <h1 className="text-4xl  font-black ">
+        <div className="content text-white sm:flex-row items-center justify-center ">
+          <div className=" sm:hidden my-7 text-center">
+            <Link
+              className="px-5 py-4 bg-[#6556CD] rounded-lg "
+              to={`${pathname}/trailer`}
+            >
+              <i className="text-xl ri-play-fill mr-3"></i>
+              Play Trailer
+            </Link>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl  font-black ">
             {info.detail.name ||
               info.detail.title ||
               info.detail.original_name ||
               info.detail.original_title}
-              <br />
+            <br />
             <small className="text-2xl font-bold text-zinc-200">
               ({info.detail.release_date.split("-")[0]})
             </small>
           </h1>
 
-          <div className="mt-3 mb-5 flex-col lg:flex-row  items-center gap-x-3">
-            <span className="rounded-full text-xl font-semibold bg-yellow-600 text-white w-[6vh] h-[6vh] flex-shrink-0 flex justify-center items-center">
-              {(info.detail.vote_average * 10).toFixed()} <sup>%</sup>
-            </span>
-            <h1 className="w-[60px] font-semibold text-2xl leading-6">
-              User Score
-            </h1>
+          <div className="mt-2 mb-5 flex-col lg:flex-row  items-center gap-x-3">
+            <div className="row flex gap-5 mb-4">
+              <span className="rounded-full text-xl font-semibold bg-yellow-600 text-white w-[6vh] h-[6vh] flex-shrink-0 flex justify-center items-center ">
+                {(info.detail.vote_average * 10).toFixed()} <sup>%</sup>
+              </span>
+              <h1 className="w-[60px] font-semibold text-2xl leading-6">
+                User Score
+              </h1>
+            </div>
+
             <h1>{info.detail.release_date}</h1>
-            <h1>{info.detail.genres.map((g) => g.name).join(",")}</h1>
-            <h1>{info.detail.runtime}min</h1>
+            <br />
+            <div className="row flex gap-5 text-xl sm:text-2xl">
+              <h1>{info.detail.runtime}min</h1> | 
+              <h1>{info.detail.genres.map((g) => g.name).join(",")}</h1>
+            </div>
           </div>
 
-          <h1 className="text-xl font-semibold italic text-zinc-200">
+          <h1 className="text-xl font-bold italic text-zinc-200">
             {info.detail.tagline}
           </h1>
 
-          <h1 className="text-2xl mb-3  mt-5">Overview</h1>
+          <h1 className="text-3xl mb-3  mt-5">Overview</h1>
           <p>{info.detail.overview}</p>
           {/* 
                     <h1 className="text-2xl mb-3  mt-5">Movie Translated</h1>
                     <p className="mb-10">{info.translations.join(", ")}</p> 
 */}
-          
+          <div className="hidden sm:block mt-10">
+            <Link
+              className="px-5 py-4 bg-[#6556CD] rounded-lg "
+              to={`${pathname}/trailer`}
+            >
+              <i className="text-xl ri-play-fill mr-3"></i>
+              Play Trailer
+            </Link>
+          </div>
         </div>
-      </div> 
+      </div>
 
-      
       {/* Part 3 Available on Platform */}
       <div className="w-[80%] flex flex-col gap-y-5 mt-10">
         {info.watchproviders && info.watchproviders.flatrate && (
@@ -169,8 +185,8 @@ const Moviedetails = () => {
 
       {/* Part 4 Recommendations and Similar Stuff */}
       <hr className="mt-10 mb-5 border-none h-[2px] bg-zinc-500" />
-      <h1 className=" text-3xl font-bold text-white">
-        Recommendations & Similar stuff
+      <h1 className=" sm:text-3xl text-2xl w-[70%] font-bold text-white text-wrap">
+        Recommendations  & Similar stuff
       </h1>
       <HorizontalCards
         title="movie"

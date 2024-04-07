@@ -11,7 +11,7 @@ const HorizontalCards = ({ data, title }) => {
             <Link
               to={`/${d.media_type || title}/details/${d.id}`}
               key={i}
-              className="sm:min-w-[25%]  min-w-[65%] h-[100%] mr-3 bg-zinc-900 mb-5 relative rounded-lg hover:scale-105 duration-200 cursor-pointer"
+              className="sm:min-w-[35%] h-[40%] w-[50%]  min-w-[70%] mr-3 bg-zinc-900 mb-5 relative rounded-lg hover:scale-105 duration-200 cursor-pointer"
               // Adjusted the width for small devices here ^
             >
               <img
@@ -25,7 +25,7 @@ const HorizontalCards = ({ data, title }) => {
                 }
                 alt=""
               />
-              <div className="absolute left-0 bottom-0 text-white p-2 h-[50%]">
+              <div className="absolute left-0 bottom-2 text-white p-2 h-[50%]">
                 <h1 className="text-2xl font-semibold">
                   {d.name || d.title || d.original_name || d.original_title}
                 </h1>
